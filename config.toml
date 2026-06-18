@@ -4,31 +4,6 @@ personality = "pragmatic"
 # service_tier = "default"
 approval_policy = "never"
 sandbox_mode = "danger-full-access"
-default_permissions = "project-edit"
-
-[permissions.project-edit]
-extends = ":worspace"
-description = "Редактирование проекта с защитой секретов"
-
-[permissions.project-edit.filesystem."workspace_roots"]
-"." = "write"
-"**/*.env" = "deny"
-"**/*credential*" = "deny"
-"**/*secret*" = "deny"
-
-[permissions.project-edit.worspace_roots]
-"~/code/app" = true
-"~/code/shared-libs" = true
-
-[permissions.project-edit.filesystem]
-":minimal" = "read"
-
-[permissions.project-edit.filesystem."workspace_roots"]
-"." = "write"
-".devcontainer" = "read"
-"**/*.env" = "deny"
-
-
 
 notify = [ "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\789504f803e82e2b\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
 
