@@ -1,9 +1,86 @@
-prefix_rule(pattern=["C:\\Program Files\\PowerShell\\7\\pwsh.exe", "-Command", "git clone --depth 1 https://github.com/ml-research/liground.git _vendor_liground"], decision="allow")
-prefix_rule(pattern=["C:\\Program Files\\PowerShell\\7\\pwsh.exe", "-Command", "if (Test-Path .app.lock) { $pid = Get-Content .app.lock | Select-Object -First 1; if ($pid -match '^\\d+$') { Stop-Process -Id ([int]$pid) -Force -ErrorAction SilentlyContinue; Start-Sleep -Milliseconds 300 }; Remove-Item -LiteralPath .app.lock -Force -ErrorAction SilentlyContinue; 'LOCK_HANDLED' } else { 'NO_LOCK' }"], decision="allow")
-prefix_rule(pattern=["python", "-B", "-c", "import scripts.universal as u; result = u.maintain_data(u.ROOT / 'data'); u.print_maintenance_report(result)"], decision="allow")
-prefix_rule(pattern=["python", "-B", "-c", "import importlib.util, pathlib; path = pathlib.Path('scripts/universal.py'); spec = importlib.util.spec_from_file_location('universal', path); u = importlib.util.module_from_spec(spec); spec.loader.exec_module(u); result = u.maintain_data(u.ROOT / 'data'); u.print_maintenance_report(result)"], decision="allow")
-prefix_rule(pattern=["git", "add", "--", "scripts\\universal.py", "data\\CACO\\data.json"], decision="allow")
-prefix_rule(pattern=["git", "push", "origin", "main"], decision="allow")
-prefix_rule(pattern=["git", "add", "--"], decision="allow")
-prefix_rule(pattern=["git", "commit", "-m"], decision="allow")
-prefix_rule(pattern=["python", "-B", "-c", "import importlib.util, pathlib; path = pathlib.Path('scripts/universal.py'); spec = importlib.util.spec_from_file_location('universal', path); u = importlib.util.module_from_spec(spec); spec.loader.exec_module(u); data_root = u.ROOT / 'data'; report = u.save_caco_effect_matches(data_root / 'data.json', data_root / 'CACO' / 'data.json', data_root / 'CACO' / 'effect_matches_report.json'); print(len(report['точные_совпадения']), len(report['вероятные_совпадения']), len(report['нужно_проверить_вручную']))"], decision="allow")
+prefix_rule(
+    pattern=[
+        "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+        "-Command",
+        "git clone --depth 1 https://github.com/ml-research/liground.git _vendor_liground",
+    ],
+    decision="allow",
+)
+
+prefix_rule(
+    pattern=[
+        "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+        "-Command",
+        "if (Test-Path .app.lock) { $pid = Get-Content .app.lock | Select-Object -First 1; if ($pid -match '^\\d+$') { Stop-Process -Id ([int]$pid) -Force -ErrorAction SilentlyContinue; Start-Sleep -Milliseconds 300 }; Remove-Item -LiteralPath .app.lock -Force -ErrorAction SilentlyContinue; 'LOCK_HANDLED' } else { 'NO_LOCK' }",
+    ],
+    decision="allow",
+)
+
+prefix_rule(
+    pattern=[
+        "python",
+        "-B",
+        "-c",
+        "import scripts.universal as u; result = u.maintain_data(u.ROOT / 'data'); u.print_maintenance_report(result)",
+    ],
+    decision="allow",
+)
+
+prefix_rule(
+    pattern=[
+        "python",
+        "-B",
+        "-c",
+        "import importlib.util, pathlib; path = pathlib.Path('scripts/universal.py'); spec = importlib.util.spec_from_file_location('universal', path); u = importlib.util.module_from_spec(spec); spec.loader.exec_module(u); result = u.maintain_data(u.ROOT / 'data'); u.print_maintenance_report(result)",
+    ],
+    decision="allow",
+)
+
+prefix_rule(
+    pattern=[
+        "git",
+        "add",
+        "--",
+        "scripts\\universal.py",
+        "data\\CACO\\data.json",
+    ],
+    decision="allow",
+)
+
+prefix_rule(
+    pattern=[
+        "git",
+        "push",
+        "origin",
+        "main",
+    ],
+    decision="allow",
+)
+
+prefix_rule(
+    pattern=[
+        "git",
+        "add",
+        "--",
+    ],
+    decision="allow",
+)
+
+prefix_rule(
+    pattern=[
+        "git",
+        "commit",
+        "-m",
+    ],
+    decision="allow",
+)
+
+prefix_rule(
+    pattern=[
+        "python",
+        "-B",
+        "-c",
+        "import importlib.util, pathlib; path = pathlib.Path('scripts/universal.py'); spec = importlib.util.spec_from_file_location('universal', path); u = importlib.util.module_from_spec(spec); spec.loader.exec_module(u); data_root = u.ROOT / 'data'; report = u.save_caco_effect_matches(data_root / 'data.json', data_root / 'CACO' / 'data.json', data_root / 'CACO' / 'effect_matches_report.json'); print(len(report['точные_совпадения']), len(report['вероятные_совпадения']), len(report['нужно_проверить_вручную']))",
+    ],
+    decision="allow",
+)
