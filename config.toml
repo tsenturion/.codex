@@ -5,6 +5,24 @@ personality = "pragmatic"
 approval_policy = "never"
 sandbox_mode = "danger-full-access"
 
+default_permissions = "networked"
+
+[permissions.networked]
+extends = ":workspace"
+
+[permissions.networked.filesystem.":workspace_roots]
+"." = "write"
+"**/*.env" = "deny"
+
+[permissions.networked.network]
+enable = true
+
+[permissions.networked.network.domains]
+"api.openai.com" = "allow"
+"*.github.com" = "allow"
+"**.example.com" = "deny"
+"*" = "allow"
+
 notify = [ "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\789504f803e82e2b\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
 
 [windows]
