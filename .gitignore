@@ -1,0 +1,14 @@
+*
+
+!.gitignore
+
+!rules
+!default.rules
+
+!config.toml
+!fast.config.toml
+!readonly.config.toml
+!AGENTS.md
+
+!skills/
+!skills/**
