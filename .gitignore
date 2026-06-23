@@ -3,7 +3,7 @@
 !.gitignore
 
 !rules
-!default.rules
+!rules/**
 
 !config.toml
 !fast.config.toml
