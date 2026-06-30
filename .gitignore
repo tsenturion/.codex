@@ -12,3 +12,5 @@
 
 !skills/
 !skills/**
+
+!hooks.json
