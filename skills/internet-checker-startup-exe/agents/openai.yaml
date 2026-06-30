@@ -1,0 +1,4 @@
+interface:
+  display_name: "Internet Checker Startup EXE"
+  short_description: "Refresh Startup EXE after functional changes"
+  default_prompt: "Use $internet-checker-startup-exe to rebuild and replace the Startup executable after functional Internet Checker changes."
