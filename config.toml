@@ -1,5 +1,5 @@
 model = "gpt-5.6-sol"
-model_reasoning_effort = "high"
+model_reasoning_effort = "xhigh"
 personality = "pragmatic"
 
 approval_policy = "never"
@@ -8,8 +8,8 @@ default_permissions = ":danger-full-access"
 service_tier = "default"
 
 
-notify = [ "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a708e72b10c27b59\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
 
+notify = [ "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\13827bafdc0b5422\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
 [agents]
 enabled = true
 default_subagent_model = "gpt-5.6-terra"
@@ -23,16 +23,10 @@ sandbox = "elevated"
 [plugins."github@openai-curated"]
 enabled = true
 
-[plugins."browser@openai-bundled"]
-enabled = true
-
 [plugins."codex-app-tools@openai-bundled"]
 enabled = true
 
 [plugins."visualize@openai-bundled"]
-enabled = true
-
-[plugins."computer-use@openai-bundled"]
 enabled = true
 
 [plugins."documents@openai-primary-runtime"]
@@ -50,7 +44,13 @@ enabled = true
 [plugins."template-creator@openai-primary-runtime"]
 enabled = true
 
+[plugins."browser@openai-bundled"]
+enabled = true
+
 [plugins."unified-computer-use@openai-bundled"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
 enabled = true
 
 [projects.'C:\Users\user\repos\bughouse']
@@ -104,6 +104,27 @@ trust_level = "trusted"
 [projects.'c:\users\user\documents\codex\2026-09-14\data-source-localhost-initial-catalog-master']
 trust_level = "trusted"
 
+[projects.'c:\users\user\documents\codex\2026-09-16\new-chat']
+trust_level = "trusted"
+
+[projects.'c:\users\user\documents\codex\2026-09-19\rfr']
+trust_level = "trusted"
+
+[projects.'c:\users\user\documents\codex\2026-09-19\new-chat']
+trust_level = "trusted"
+
+[projects.'c:\users\user\documents\codex\2026-09-20\c']
+trust_level = "trusted"
+
+[projects.'c:\users\user\documents\codex\2026-09-20\new-chat']
+trust_level = "trusted"
+
+[projects.'c:\users\user\desktop\аис\ии2']
+trust_level = "trusted"
+
+[projects.'c:\users\user\desktop\ii']
+trust_level = "trusted"
+
 [marketplaces.openai-bundled]
 source_type = "local"
 source = '\\?\C:\Users\user\.codex\.tmp\bundled-marketplaces\openai-bundled'
@@ -117,25 +138,27 @@ js_repl = false
 
 [mcp_servers.node_repl]
 args = []
-command = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\a708e72b10c27b59\bin\node_repl.exe'
+command = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\13827bafdc0b5422\bin\node_repl.exe'
+env_vars = ["CODEX_WINDOWS_REGISTERED_CORE"]
 startup_timeout_sec = 120
 
 [mcp_servers.node_repl.env]
 NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
-NODE_REPL_NODE_MODULE_DIRS = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\a708e72b10c27b59\bin\node_modules'
-NODE_REPL_NODE_PATH = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\a708e72b10c27b59\bin\node.exe'
-NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\user\.codex;C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\a708e72b10c27b59\bin\node_modules'
+NODE_REPL_NODE_MODULE_DIRS = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\13827bafdc0b5422\bin\node_modules'
+NODE_REPL_NODE_PATH = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\13827bafdc0b5422\bin\node.exe'
+NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\user\.codex;C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\13827bafdc0b5422\bin\node_modules'
 CODEX_HOME = 'C:\Users\user\.codex'
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 BROWSER_USE_TINYSKY_ENABLED = "1"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.908.40834"
-NODE_REPL_TRUSTED_SERVICES = '{"browser":"C:/Users/user/.codex/plugins/cache/openai-bundled/browser/26.908.40834/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+BROWSER_USE_CODEX_APP_VERSION = "26.917.71314"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"C:/Users/user/.codex/plugins/cache/openai-bundled/browser/26.917.71314/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
 SKY_CUA_NATIVE_PIPE = "1"
-SKY_CUA_NATIVE_PIPE_DIRECTORY = '\\.\pipe\codex-computer-use-47c5f414-27d3-438f-b4ea-f3a25d71523d'
-CODEX_CLI_PATH = 'C:\Users\user\AppData\Local\OpenAI\Codex\bin\bffc5354119c8421\codex.exe'
+SKY_CUA_NATIVE_PIPE_DIRECTORY = '\\.\pipe\codex-computer-use-0097f105-d592-43a5-8d2b-8afdb99d0ed5'
+CODEX_CLI_PATH = 'C:\Users\user\AppData\Local\OpenAI\Codex\bin\13995fba801849b0\codex.exe'
+NODE_REPL_UNTRUSTED_ENV_ALLOWLIST = "CODEX_WINDOWS_REGISTERED_CORE"
 
 [desktop]
 followUpQueueMode = "queue"

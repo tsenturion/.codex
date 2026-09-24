@@ -14,5 +14,9 @@
 !skills/**
 
 !hooks.json
-
+!agents
+!code-explorer.toml
+!implementer.toml
+!log-analyzer.toml
+!tester.toml
 __pycache__
